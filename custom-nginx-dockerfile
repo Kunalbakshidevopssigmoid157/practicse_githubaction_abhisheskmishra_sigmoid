@@ -4,4 +4,4 @@ RUN apt-get update
 RUN apt upgrade -y
 RUN apt-get install nginx -y
 
-EXPOSE 9001
+EXPOSE 80
