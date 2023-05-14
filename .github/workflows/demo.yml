@@ -37,5 +37,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: build,tag and upload image in dockerhub
         run: |
-           sudo docker build -f https://github.com/Kunalbakshidevopssigmoid157/practicse_githubaction_abhisheskmishra_sigmoid/blob/main/custom-nginx-dockerfile -t custom-nginx
-           sudo docker push kunalsigmoid157/demo_nginx:custom-nginx
+           docker build -f . /main/custom-nginx-dockerfile
+           docker build -t kunalsigmoid157/demo_nginx:custom-nginx .
+           docker push kunalsigmoid157/demo_nginx:custom-nginx
