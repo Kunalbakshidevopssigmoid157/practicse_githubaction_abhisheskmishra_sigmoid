@@ -30,5 +30,6 @@ jobs:
         minikube start
         kubectl apply -f deployment.yaml
         kubectl get deployment
+        kubectl start -f service.yaml
       
         
