@@ -22,5 +22,3 @@ jobs:
         
     - name: Build the image
       run: docker build . -f dockerfile -t ${{ secrets.DOCKER_REGISTRY }}/custom-nginx:latest
-        
-    
