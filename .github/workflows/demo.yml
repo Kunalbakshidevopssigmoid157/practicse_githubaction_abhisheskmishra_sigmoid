@@ -21,4 +21,6 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         
     - name: Build the image
-      run: docker build . -f dockerfile -t kunalsigmoid157/cnginx:v1
+      run: |
+        docker build . -f dockerfile -t kunalsigmoid157/cnginx:v1
+        docker push kunalsigmoid157/cnginx:v1
