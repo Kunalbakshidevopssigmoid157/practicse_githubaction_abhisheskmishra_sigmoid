@@ -22,24 +22,17 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
       
+      - uses: docker/login-action@v2
       - name: Login to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
-
-      # Runs a single command using the runners shell
-      - name: install docker
+        env:
+          DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
         run: |
-             sudo apt-get update
-             sudo apt upgrade
-             curl -fsSL https://get.docker.com -o get-docker.sh
-             sudo sh ./get-docker.sh --dry-run
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
              
       # Runs a set of commands using the runners shellIMAGE_TAG
       - name: build,tag and upload image in dockerhub
         run: |
-           docker build . -f dockerfile -t $DOCKERHUB_USERNAME:latest
+           docker build . --file dockerfile -t $DOCKERHUB_REGISTRY/$DOCKERHUB_REPOSITORY:latest
            docker push $DOCKERHUB_REGISTRY/$DOCKERHUB_REPOSITORY:latest
