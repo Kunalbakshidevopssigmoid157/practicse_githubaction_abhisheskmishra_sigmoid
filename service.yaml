@@ -6,7 +6,7 @@ metadata:
     purpose: service
 spec:
   selector:
-    app: nginx-deploy
+    app: cnginx
   ports:
   - port: 8080
     targetPort: 8080
