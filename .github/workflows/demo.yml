@@ -31,3 +31,4 @@ jobs:
         kubectl apply -f deployment.yaml
         kubectl get deployment
         kubectl apply -f service.yaml
+        minikube service nginx-service --url
