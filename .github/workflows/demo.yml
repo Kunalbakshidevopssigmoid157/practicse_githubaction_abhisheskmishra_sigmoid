@@ -21,7 +21,6 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         
     - name: Build the image
-      run: docker build -f dockerfile -t ${{ secrets.DOCKER_REGISTRY }}/custom-nginx:latest .
+      run: docker build . -f dockerfile -t ${{ secrets.DOCKER_REGISTRY }}/custom-nginx:latest
         
-    - name: Push the image
-      run: docker push ${{ secrets.DOCKER_REGISTRY }}/${{ secrets.DOCKERHUB_REPOSITORY }}:latest
+    
