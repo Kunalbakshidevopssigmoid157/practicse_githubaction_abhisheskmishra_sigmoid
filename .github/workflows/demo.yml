@@ -37,13 +37,12 @@ jobs:
              sudo apt upgrade
              curl -fsSL https://get.docker.com -o get-docker.sh
              sudo sh ./get-docker.sh --dry-run
-             
-      - name: dockerhub credentials
+     
        
         
 
       # Runs a set of commands using the runners shellIMAGE_TAG
       - name: build,tag and upload image in dockerhub
         run: |
-           docker build . -f $DOCKERHUB_USERNAME/custim-nginx
-           docker push $DOCKERHUB_REGISTRY/$DOCKERHUB_REPOSITORY:latest
+           docker build . -f $DOCKERHUB_USERNAME/custom-nginx
+           docker push $DOCKERHUB_REGISTRY/$DOCKERHUB_REPOSITORY:custom-nginx
