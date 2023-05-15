@@ -21,4 +21,4 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         
     - name: Build the image
-      run: docker build . -f dockerfile -t ${{ secrets.DOCKER_REGISTRY }}/custom-nginx:latest
+      run: docker build . -f dockerfile -t kunalsigmoid157/cnginx:v1
