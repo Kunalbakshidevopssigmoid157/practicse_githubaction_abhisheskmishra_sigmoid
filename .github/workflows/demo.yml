@@ -37,10 +37,7 @@ jobs:
              sudo apt upgrade
              curl -fsSL https://get.docker.com -o get-docker.sh
              sudo sh ./get-docker.sh --dry-run
-     
-       
-        
-
+             
       # Runs a set of commands using the runners shellIMAGE_TAG
       - name: build,tag and upload image in dockerhub
         run: |
