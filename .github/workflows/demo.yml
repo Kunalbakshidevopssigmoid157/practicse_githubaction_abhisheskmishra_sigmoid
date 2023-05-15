@@ -24,3 +24,11 @@ jobs:
       run: |
         docker build . -f dockerfile -t kunalsigmoid157/cnginx:v1
         docker push kunalsigmoid157/cnginx:v1
+        
+    - name: minikube deploy
+      run: |
+        minikube start
+        kubectl apply -f deployment.yaml
+        kubectl get deployment
+      
+        
