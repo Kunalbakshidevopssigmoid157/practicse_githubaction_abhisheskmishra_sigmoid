@@ -27,7 +27,7 @@ jobs:
         
     - name: minikube deploy
       run: |
-        minikube start --static-ip 192.168.49.2 
+        minikube start --static-ip 192.168.59.100
         kubectl apply -f deployment.yaml
         sleep 25
         kubectl get deployment
