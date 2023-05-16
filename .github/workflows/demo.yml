@@ -27,9 +27,9 @@ jobs:
         
     - name: minikube deploy
       run: |
-        minikube start
+        minikube start --driver docker --static-ip 192.168.59.101
         kubectl apply -f deployment.yaml
         sleep 25
         kubectl get deployment
         kubectl apply -f service.yaml
-        minikube service nginx-service --url || curl 
+        minikube service nginx-service --url
