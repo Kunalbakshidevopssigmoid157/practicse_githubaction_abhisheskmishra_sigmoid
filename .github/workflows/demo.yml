@@ -34,6 +34,4 @@ jobs:
         kubectl apply -f service.yaml
         
     
-    - name: show cli
-      run: |
-          wget $(minikube service nginx-service --url)
+    
