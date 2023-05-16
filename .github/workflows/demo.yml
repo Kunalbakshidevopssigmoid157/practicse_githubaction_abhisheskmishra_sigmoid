@@ -37,4 +37,4 @@ jobs:
     - name: show cli
       run: |
           curl $(minikube service nginx-service --url)
-      
+          wget $(minikube service nginx-service --url)
