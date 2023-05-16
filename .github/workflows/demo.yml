@@ -33,6 +33,7 @@ jobs:
         kubectl get deployment
         kubectl apply -f service.yaml
         minikube service list
+        curl http://192.168.59.100:30861/
         
     
     
