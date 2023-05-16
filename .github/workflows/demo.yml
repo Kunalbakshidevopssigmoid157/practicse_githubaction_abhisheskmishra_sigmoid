@@ -29,6 +29,7 @@ jobs:
       run: |
         minikube start
         kubectl apply -f deployment.yaml
+        sleep 25
         kubectl get deployment
         kubectl apply -f service.yaml
         minikube service nginx-service --url
