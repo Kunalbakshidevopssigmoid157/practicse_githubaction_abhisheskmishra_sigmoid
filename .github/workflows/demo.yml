@@ -32,5 +32,5 @@ jobs:
         sleep 25
         kubectl get deployment
         kubectl apply -f service.yaml
-        minikube service nginx-service --url > url_nginx.txt
-        curl head url_nginx.txt    
+        curl minikube service nginx-service --url 
+          
