@@ -33,4 +33,4 @@ jobs:
         kubectl get deployment
         kubectl apply -f service.yaml
         minikube service nginx-service --url
-        minikube stop
+        
